@@ -1,0 +1,67 @@
+@import "compass";
+
+$number-nav:7;
+$speed-scalar:2.5;
+
+@import "animations";
+@import "sphere-shader";
+
+body,div {
+	margin:0;
+	padding:0;
+}
+
+#main-content {
+	height: 100vh;
+	width: 100vw;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+}
+
+#center-thing {
+	position:absolute;
+	top:0;left:0;
+	display:flex;align-items:center;justify-content:center;
+	height:100%;width:100%;
+}
+
+#content-items {
+	width:20vmin;height:20vmin;
+
+	& .content-item {
+		position:relative;
+		top:20vmin;
+		width:20vmin;height:20vmin;
+		margin-top:-20vmin;
+		overflow:hidden;
+		display:none;
+
+		display:flex;align-items:center;justify-content:center;
+		
+		//border-radius:10vmin;
+		//border: 1vmin solid teal;
+		@include animation(circle-move #{$number-nav * $speed-scalar}s linear infinite);
+		//@include background-image(radial-gradient(45px 45px, cyan 10px, dodgerblue 30px));
+		
+		& .bg {
+	    	display:block;
+	    	height:100%;width:100%;
+	    	display:flex;align-items:center;justify-content:center;
+	    	z-index:1;
+	    	background-size:cover;
+		}
+	}
+	
+	@for $item from 1 through $number-nav{
+	  & .content-item:nth-child(#{$item}){
+	  	display:block;
+	    @include animation-delay(-#{$item * $speed-scalar}s);
+	    
+	    & .sphere .bg {
+	    	background-image: url(../images/#{$item}.jpg);
+	    }
+	  }
+	}
+}
+

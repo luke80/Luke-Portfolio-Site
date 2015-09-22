@@ -1,0 +1,16 @@
+@include keyframes(circle-move) {
+	from {
+		@include transform(rotate(0deg) translateX(40vmin) rotate(0deg));
+	}
+    to   {
+    	@include transform(rotate(360deg) translateX(40vmin) rotate(-360deg));
+    }
+}
+@include keyframes(circle-wobble) {
+	from {
+		@include rotate(360deg);
+	}
+    to   {
+		@include rotate(0deg);
+    }
+}
