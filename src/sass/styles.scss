@@ -5,6 +5,7 @@ $speed-scalar:2.5;
 
 @import "animations";
 @import "sphere-shader";
+@import "color-box";
 
 body,div {
 	margin:0;
@@ -65,3 +66,9 @@ body,div {
 	}
 }
 
+.center {
+	text-align:center;
+}
+label {
+	display:inline-block;
+}

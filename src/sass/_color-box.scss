@@ -1,0 +1,180 @@
+@import "compass/css3";
+
+/*	Alpha Transparency Breakpoints	*/
+$full-alpha: 1;
+$half-alpha: .35;
+$transparent-alpha: 0;
+
+/*	Color Spread Breakpoints
+	(warning, current SVG equivalency uses different values, therefore is broken)
+*/
+$color-spread1: 5%;
+$color-spread2: 45%;
+$color-spread3: 75%;
+
+/*	Colors	*/
+/*		Colors - full alpha	*/
+$transparent: rgba(255,255,255,0);
+$green:		rgba(0,255,0,$full-alpha);
+$aqua:		rgba(0,255,255,$full-alpha);
+$yellow:	rgba(255,255,0,$full-alpha);
+$white:	rgba(255,255,255,$full-alpha);
+$black:	rgba(0,0,0,$full-alpha);
+$blue:	rgba(0,0,255,$full-alpha);
+$red:	rgba(255,0,0,$full-alpha);
+$fuchsia:	rgba(255,0,255,$full-alpha);
+/*		Colors - half alpha	*/
+$green2:	rgba(0,255,0,$half-alpha);
+$aqua2:		rgba(0,255,255,$half-alpha);
+$yellow2:	rgba(255,255,0,$half-alpha);
+$white2:	rgba(255,255,255,$half-alpha);
+$black2:	rgba(0,0,0,$half-alpha);
+$blue2:		rgba(0,0,255,$half-alpha);
+$red2:		rgba(255,0,0,$half-alpha);
+$fuchsia2:	rgba(255,0,255,$half-alpha);
+
+/*	Cube size	*/
+$size-base: 60vmin;
+
+/*	Cube tipped-rotation degrees	*/
+$x-rotation:	35.264deg;
+$y-rotation:	0deg;
+$z-rotation:	45deg;
+
+/*	Defeat poorly aligned edges	*/
+$face-overlap: 0px;
+$translate-z:translateZ( calc(#{$size-base / 2} - #{$face-overlap}) );
+
+#main-content {
+}
+
+.color-box-container {
+	position:relative;
+	perspective:#{($size-base / 2) * 10};
+	height:$size-base;width:$size-base;
+	margin-left:auto;margin-right:auto;
+	margin-top:#{$size-base / 2};margin-bottom:#{$size-base / 2};
+	transition:all 1s;
+	
+	&.rounded {
+		border-radius: 25%;
+		overflow:hidden;
+	}
+	&.circle {
+		border-radius: 50%;
+		overflow:hidden;
+	}
+	
+	.color-box {
+		position:absolute;
+		transform-style:preserve-3d;
+		height:100%;width:100%;
+		margin:0;
+		transition:all 1s;
+		zoom:0.995;
+		
+		& > * {
+			position:absolute;
+			/*top:0;left:0;*/
+			//border:0px solid black;
+			width:100%;height:100%;
+			margin:0;
+			display:block;
+			background-color:white;
+			color:transparent;
+			display: flex !important;justify-content: center;align-items: center;
+			
+			transition:all 1s;
+			
+			&:nth-child(1) /*	front	*/ {
+				@include background-image(
+					radial-gradient(circle at top left,		$yellow $color-spread1, $yellow2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom right,	$aqua $color-spread1, $aqua2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom left,	$green $color-spread1, $green2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top right,	$white $color-spread1, $white2 $color-spread2 , $transparent $color-spread3, $transparent)					
+				);
+				@include transform(	rotateX(0deg)	rotateY(0deg)	rotateZ(0deg)	$translate-z);
+				display:block;
+			}
+			&:nth-child(2)	/*	back	*/ {
+				@include background-image(
+					radial-gradient(circle at top right,	$blue $color-spread1, $blue2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom left,	$red $color-spread1, $red2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom right,	$fuchsia $color-spread1, $fuchsia2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top left,		$black $color-spread1, $black2 $color-spread2 , $transparent $color-spread3, $transparent)
+				);
+				@include transform(	rotateX(180deg)	rotateY(0deg)	rotateZ(0deg)	$translate-z);
+				display:block;
+			}
+			&:nth-child(3)	/*	right	*/ {
+				@include background-image(
+					radial-gradient(circle at bottom left,	$aqua $color-spread1, $aqua2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom right,	$blue $color-spread1, $blue2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top right,	$fuchsia $color-spread1, $fuchsia2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top left,		$white $color-spread1, $white2 $color-spread2 , $transparent $color-spread3, $transparent)
+				);
+				@include transform(	rotateX(0deg)	rotateY(90deg)	rotateZ(0deg)	$translate-z);
+				display:block;
+			}
+			&:nth-child(4)	/*	left	*/ {
+				@include background-image(
+					radial-gradient(circle at top left,		$red $color-spread1, $red2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top right,	$yellow $color-spread1, $yellow2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom right,	$green $color-spread1, $green2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom left,	$black $color-spread1, $black2 $color-spread2 , $transparent $color-spread3, $transparent)
+				);
+				@include transform(	rotateX(0deg)	rotateY(-90deg)	rotateZ(0deg)	$translate-z);
+				display:block;
+			}
+			&:nth-child(5)	/*	top	*/ {
+				@include background-image(
+					radial-gradient(circle at top left,		$red $color-spread1, $red2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom left,	$yellow $color-spread1, $yellow2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top right,	$fuchsia $color-spread1, $fuchsia2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom right,	$white $color-spread1, $white2 $color-spread2 , $transparent $color-spread3, $transparent)
+				);
+				@include transform(rotateX(90deg)	rotateY(0deg)	rotateZ(0deg)	$translate-z);
+				display:block;
+			}
+			&:nth-child(6)	/*	bottom	*/ {
+				@include background-image(
+					radial-gradient(circle at top right,	$aqua $color-spread1, $aqua2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom right,	$blue $color-spread1, $blue2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at top left,		$green $color-spread1, $green2 $color-spread2 , $transparent $color-spread3, $transparent),
+					radial-gradient(circle at bottom left,	$black $color-spread1, $black2 $color-spread2 , $transparent $color-spread3, $transparent)
+				);
+				@include transform(	rotateX(-90deg)	rotateY(0deg)	rotateZ(0deg)	$translate-z);
+				display:block;
+			}
+		}
+		&.tipped > * {
+			&:nth-child(1) /*	front	*/ {
+				@include transform(	rotateX($x-rotation)			rotateY(-$y-rotation)			rotateZ(#{$z-rotation - 90})	 $translate-z);
+			}
+			&:nth-child(2)	/*	back	*/ {
+				@include transform(	rotateX($x-rotation)			rotateY(#{$y-rotation + 180})	rotateZ(#{$z-rotation - 180})	 $translate-z);
+			}
+			&:nth-child(3)	/*	right	*/ {
+				@include transform(	rotateX(#{$x-rotation + 90})	rotateY(#{$y-rotation + 45})	rotateZ(#{$z-rotation - 135})	 $translate-z);
+			}
+			&:nth-child(4)	/*	left	*/ {
+				@include transform(	rotateX(#{$x-rotation + 90})	rotateY(#{$y-rotation - 135})	rotateZ(#{$z-rotation + 45})	 $translate-z);
+			}
+			&:nth-child(5)	/*	top	*/ {
+				@include transform(	rotateX(#{$x-rotation - 90})	rotateY(#{$y-rotation - 135})	rotateZ(#{$z-rotation + 135})	 $translate-z);
+			}
+			&:nth-child(6)	/*	bottom	*/ {
+				@include transform(	rotateX(#{$x-rotation - 90})	rotateY(#{$y-rotation + 45})	rotateZ(#{$z-rotation - 45})	 $translate-z);
+			}
+		}
+	}
+}
+@include keyframes(spin) {
+	0%		{ @include transform(	rotateX(0deg)	rotateY(0deg)		rotateZ(0deg)	$translate-z	); }
+	100%	{ @include transform(	rotateX(0deg)	rotateY(360deg)		rotateZ(0deg)	$translate-z	); }
+}
+.spinning {
+	animation: spin 4s infinite linear;
+	transition: all 1s linear;
+	transform-origin: 50% 50% #{$size-base / 2};
+}

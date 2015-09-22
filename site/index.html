@@ -4,6 +4,21 @@
 	<meta charset="ISO-8859-1">
 	<title>Insert title here</title>
 	<link href="css/styles.css" rel="stylesheet" type="text/css" media="all" />
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script language="javascript" >
+	$(document).ready(function(){
+		$("input[name=cropping]").on("click",function( e ){
+			$(".color-box-container").removeClass("rounded").removeClass("circle").addClass($(e.target).val()).removeClass("none");
+		});
+		$("input#tip").on("click",function( e ){
+			console.log(e.target.checked);
+			if(e.target.checked)
+				$(".color-box").addClass("tipped");
+			else
+				$(".color-box").removeClass("tipped");
+		});
+	});
+	</script>
 </head>
 <body>
 	<div id="main-content">
@@ -19,5 +34,15 @@
 			<div class="content-item"><div class="sphere"><span class="bg">Content Item 8</span></div></div>
 		</div>
 	</div>
+	<section class="color-box-container">
+		<div class="color-box tipped spinning">
+			<figure>This is a list item 1</figure>
+			<figure>This is a list item 2</figure>
+			<figure>This is a list item 3</figure>
+			<figure>This is a list item 4</figure>
+			<figure>This is a list item 5</figure>
+			<figure>This is a list item 6</figure>
+		</div>
+	</section>
 </body>
 </html>
