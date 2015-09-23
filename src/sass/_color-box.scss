@@ -34,7 +34,7 @@ $red2:		rgba(255,0,0,$half-alpha);
 $fuchsia2:	rgba(255,0,255,$half-alpha);
 
 /*	Cube size	*/
-$size-base: 60vmin;
+$size-base: 30vmin;
 
 /*	Cube tipped-rotation degrees	*/
 $x-rotation:	35.264deg;
@@ -44,6 +44,8 @@ $z-rotation:	45deg;
 /*	Defeat poorly aligned edges	*/
 $face-overlap: 0px;
 $translate-z:translateZ( calc(#{$size-base / 2} - #{$face-overlap}) );
+
+@import "_radio-buttons";
 
 #main-content {
 }
@@ -56,22 +58,15 @@ $translate-z:translateZ( calc(#{$size-base / 2} - #{$face-overlap}) );
 	margin-top:#{$size-base / 2};margin-bottom:#{$size-base / 2};
 	transition:all 1s;
 	
-	&.rounded {
-		border-radius: 25%;
-		overflow:hidden;
-	}
-	&.circle {
-		border-radius: 50%;
-		overflow:hidden;
-	}
-	
 	.color-box {
 		position:absolute;
-		transform-style:preserve-3d;
 		height:100%;width:100%;
 		margin:0;
-		transition:all 1s;
 		zoom:0.995;
+		
+		transition: all 1s linear;
+		transform-style:preserve-3d;
+		//@include transform(	rotateX(45deg)	rotateY(0deg)	rotateZ(0deg)	$translate-z);
 		
 		& > * {
 			position:absolute;
@@ -81,7 +76,7 @@ $translate-z:translateZ( calc(#{$size-base / 2} - #{$face-overlap}) );
 			margin:0;
 			display:block;
 			background-color:white;
-			color:transparent;
+			color:black;
 			display: flex !important;justify-content: center;align-items: center;
 			
 			transition:all 1s;
@@ -147,34 +142,85 @@ $translate-z:translateZ( calc(#{$size-base / 2} - #{$face-overlap}) );
 				display:block;
 			}
 		}
-		&.tipped > * {
-			&:nth-child(1) /*	front	*/ {
-				@include transform(	rotateX($x-rotation)			rotateY(-$y-rotation)			rotateZ(#{$z-rotation - 90})	 $translate-z);
-			}
-			&:nth-child(2)	/*	back	*/ {
-				@include transform(	rotateX($x-rotation)			rotateY(#{$y-rotation + 180})	rotateZ(#{$z-rotation - 180})	 $translate-z);
-			}
-			&:nth-child(3)	/*	right	*/ {
-				@include transform(	rotateX(#{$x-rotation + 90})	rotateY(#{$y-rotation + 45})	rotateZ(#{$z-rotation - 135})	 $translate-z);
-			}
-			&:nth-child(4)	/*	left	*/ {
-				@include transform(	rotateX(#{$x-rotation + 90})	rotateY(#{$y-rotation - 135})	rotateZ(#{$z-rotation + 45})	 $translate-z);
-			}
-			&:nth-child(5)	/*	top	*/ {
-				@include transform(	rotateX(#{$x-rotation - 90})	rotateY(#{$y-rotation - 135})	rotateZ(#{$z-rotation + 135})	 $translate-z);
-			}
-			&:nth-child(6)	/*	bottom	*/ {
-				@include transform(	rotateX(#{$x-rotation - 90})	rotateY(#{$y-rotation + 45})	rotateZ(#{$z-rotation - 45})	 $translate-z);
-			}
-		}
 	}
 }
+
+input[id=flat]:checked ~ .color-box-container > .color-box > figure {
+	&:nth-child(1) /*	front	*/ {
+		@include transform(	rotateX(#{0deg + 0})	rotateY(#{45deg - 45})		rotateZ(#{90deg - 90})	 $translate-z);
+	}
+	&:nth-child(2)	/*	back	*/ {
+		@include transform(	rotateX(#{0deg + 0})	rotateY(#{45deg + 135})		rotateZ(#{0deg - 180})	 $translate-z);
+	}
+	&:nth-child(3)	/*	right	*/ {
+		@include transform(	rotateX(#{0deg + 90})	rotateY(#{45deg + 45})		rotateZ(#{45deg - 135})	 $translate-z);
+	}
+	&:nth-child(4)	/*	left	*/ {
+		@include transform(	rotateX(#{0deg + 90})	rotateY(#{45deg - 135})		rotateZ(#{45deg + 45})	 $translate-z);
+	}
+	&:nth-child(5)	/*	top	*/ {
+		@include transform(	rotateX(#{0deg - 90})	rotateY(#{45deg - 225})		rotateZ(#{45deg + 135})	 $translate-z);
+	}
+	&:nth-child(6)	/*	bottom	*/ {
+		@include transform(	rotateX(#{0deg - 90})	rotateY(#{45deg - 45})		rotateZ(#{45deg - 45})	 $translate-z);
+	}
+}
+input[id=edge]:checked ~ .color-box-container > .color-box > figure {
+	&:nth-child(1) /*	front	*/ {
+		@include transform(	rotateX(#{0deg + 0})	rotateY(#{0deg + 0})	rotateZ(#{$z-rotation - 90})	 $translate-z);
+	}
+	&:nth-child(2)	/*	back	*/ {
+		@include transform(	rotateX(#{0deg + 0})	rotateY(#{0deg + 180})	rotateZ(#{$z-rotation - 180})	 $translate-z);
+	}
+	&:nth-child(3)	/*	right	*/ {
+		@include transform(	rotateX(#{0deg + 90})	rotateY(#{0deg + 45})	rotateZ(#{$z-rotation - 135})	 $translate-z);
+	}
+	&:nth-child(4)	/*	left	*/ {
+		@include transform(	rotateX(#{0deg + 90})	rotateY(#{0deg - 135})	rotateZ(#{$z-rotation + 45})	 $translate-z);
+	}
+	&:nth-child(5)	/*	top	*/ {
+		@include transform(	rotateX(#{0deg - 90})	rotateY(#{0deg - 135})	rotateZ(#{$z-rotation + 135})	 $translate-z);
+	}
+	&:nth-child(6)	/*	bottom	*/ {
+		@include transform(	rotateX(#{0deg - 90})	rotateY(#{0deg + 45})	rotateZ(#{$z-rotation - 45})	 $translate-z);
+	}
+}
+input[id=tip]:checked ~ .color-box-container > .color-box > figure {
+	&:nth-child(1) /*	front	*/ {
+		@include transform(	rotateX(#{$x-rotation + 0})		rotateY(#{$y-rotation * -1})	rotateZ(#{$z-rotation - 90})	 $translate-z);
+	}
+	&:nth-child(2)	/*	back	*/ {
+		@include transform(	rotateX(#{$x-rotation + 0})		rotateY(#{$y-rotation + 180})	rotateZ(#{$z-rotation - 180})	 $translate-z);
+	}
+	&:nth-child(3)	/*	right	*/ {
+		@include transform(	rotateX(#{$x-rotation + 90})	rotateY(#{$y-rotation + 45})	rotateZ(#{$z-rotation - 135})	 $translate-z);
+	}
+	&:nth-child(4)	/*	left	*/ {
+		@include transform(	rotateX(#{$x-rotation + 90})	rotateY(#{$y-rotation - 135})	rotateZ(#{$z-rotation + 45})	 $translate-z);
+	}
+	&:nth-child(5)	/*	top	*/ {
+		@include transform(	rotateX(#{$x-rotation - 90})	rotateY(#{$y-rotation - 135})	rotateZ(#{$z-rotation + 135})	 $translate-z);
+	}
+	&:nth-child(6)	/*	bottom	*/ {
+		@include transform(	rotateX(#{$x-rotation - 90})	rotateY(#{$y-rotation + 45})	rotateZ(#{$z-rotation - 45})	 $translate-z);
+	}
+}
+
+input[id=crop-rounded]:checked ~ .color-box-container {
+	border-radius: 25%;
+	overflow:hidden;
+}
+input[id=crop-circle]:checked ~ .color-box-container {
+	border-radius: 50%;
+	overflow:hidden;
+}
+	
+
 @include keyframes(spin) {
 	0%		{ @include transform(	rotateX(0deg)	rotateY(0deg)		rotateZ(0deg)	$translate-z	); }
 	100%	{ @include transform(	rotateX(0deg)	rotateY(360deg)		rotateZ(0deg)	$translate-z	); }
 }
 .spinning {
 	animation: spin 4s infinite linear;
-	transition: all 1s linear;
 	transform-origin: 50% 50% #{$size-base / 2};
 }
