@@ -1,70 +1,637 @@
-/*
-Error: It's not clear which file to import for '@import "color-box"'.
-       Candidates:
-         _color-box.scss
-         color-box.scss
-       Please delete or rename all but one of these files.
-        on line 8 of C:/Users/myfav_000/workspace/GitHub/Luke Portfolio Site/src/sass/styles.scss
+@-moz-keyframes circle-move {
+  from {
+    -moz-transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+    transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+    transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+  }
+}
+@-webkit-keyframes circle-move {
+  from {
+    -webkit-transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+    transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+    transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+  }
+}
+@keyframes circle-move {
+  from {
+    -moz-transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+    -ms-transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+    -webkit-transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+    transform: rotate(0deg) translateX(40vmin) rotate(0deg);
+  }
+  to {
+    -moz-transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+    -ms-transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+    -webkit-transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+    transform: rotate(360deg) translateX(40vmin) rotate(-360deg);
+  }
+}
+@-moz-keyframes circle-wobble {
+  from {
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@-webkit-keyframes circle-wobble {
+  from {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+@keyframes circle-wobble {
+  from {
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+  to {
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+/* line 1, ../../src/sass/_sphere-shader.scss */
+.sphere {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 50%;
+  position: relative;
+}
 
-3: $number-nav:7;
-4: $speed-scalar:2.5;
-5: 
-6: @import "animations";
-7: @import "sphere-shader";
-8: @import "color-box";
-9: 
-10: body,div {
-11: 	margin:0;
-12: 	padding:0;
-13: }
+/* line 9, ../../src/sass/_sphere-shader.scss */
+.sphere > * {
+  /*	Round button shine	*/
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjEyMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiMzMjMyMzIiLz48c3RvcCBvZmZzZXQ9IjgwJSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwODAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(50% 120%, circle cover, #323232, rgba(0, 0, 0, 0) 80%, #000080 100%);
+  background-image: -webkit-radial-gradient(50% 120%, circle cover, #323232, rgba(0, 0, 0, 0) 80%, #000080 100%);
+  background-image: radial-gradient(circle cover at 50% 120%, #323232, rgba(0, 0, 0, 0) 80%, #000080 100%);
+}
 
-Backtrace:
-C:/Users/myfav_000/workspace/GitHub/Luke Portfolio Site/src/sass/styles.scss:8
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:45:in `import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:311:in `visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:158:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:167:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:179:in `with_environment'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:166:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:186:in `visit_root'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:157:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/engine.rb:278:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:17:in `block in render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:29:in `with_import_scope'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-import-once-1.0.5/lib/compass/import-once/engine.rb:16:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.18/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `call'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
-C:/Ruby22-x64/bin/compass:23:in `load'
-C:/Ruby22-x64/bin/compass:23:in `<main>'
+/* line 13, ../../src/sass/_sphere-shader.scss */
+.sphere:before {
+  content: "";
+  position: absolute;
+  /*	Top corner shine	*/
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjEyMCUiIHI9IjcwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjc1Ii8+PHN0b3Agb2Zmc2V0PSI3MCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(50% 120%, circle cover, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 70%);
+  background-image: -webkit-radial-gradient(50% 120%, circle cover, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 70%);
+  background-image: radial-gradient(circle cover at 50% 120%, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0) 70%);
+  border-radius: 50%;
+  bottom: 2.5%;
+  left: 5%;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60);
+  opacity: 0.6;
+  height: 100%;
+  width: 90%;
+  -webkit-filter: blur(5px);
+  filter: blur(5px);
+  z-index: 2;
+}
+
+/* line 27, ../../src/sass/_sphere-shader.scss */
+.sphere:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  border-radius: 50%;
+  /*	 shine	*/
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iMjQlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSIxNCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjI0JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(50% 50%, circle cover, #ffffff, #ffffff 14%, rgba(255, 255, 255, 0) 24%);
+  background-image: -webkit-radial-gradient(50% 50%, circle cover, #ffffff, #ffffff 14%, rgba(255, 255, 255, 0) 24%);
+  background-image: radial-gradient(circle cover at 50% 50%, #ffffff, #ffffff 14%, rgba(255, 255, 255, 0) 24%);
+  -moz-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -ms-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -webkit-transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+
+/*	Alpha Transparency Breakpoints	*/
+/*	Color Spread Breakpoints
+	(warning, current SVG equivalency uses different values, therefore is broken)
 */
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: It's not clear which file to import for '@import \"color-box\"'.\A        Candidates:\A          _color-box.scss\A          color-box.scss\A        Please delete or rename all but one of these files.\A         on line 8 of C:/Users/myfav_000/workspace/GitHub/Luke Portfolio Site/src/sass/styles.scss\A \A 3: $number-nav:7;\A 4: $speed-scalar:2.5;\A 5: \A 6: @import \"animations\";\A 7: @import \"sphere-shader\";\A 8: @import \"color-box\";\A 9: \A 10: body,div {\A 11: 	margin:0;\A 12: 	padding:0;\A 13: }"; }
+/*	Colors	*/
+/*		Colors - full alpha	*/
+/*		Colors - half alpha	*/
+/*	Cube size	*/
+/*	Cube tipped-rotation degrees	*/
+/*	Defeat poorly aligned edges	*/
+/* line 1, ../../src/sass/_radio-buttons.scss */
+div {
+  position: relative;
+}
+
+/* line 4, ../../src/sass/_radio-buttons.scss */
+input[type=radio] {
+  display: none;
+}
+
+/* line 8, ../../src/sass/_radio-buttons.scss */
+div:has(input) {
+  width: 50vw;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 12, ../../src/sass/_radio-buttons.scss */
+input[type=radio] + label {
+  position: relative;
+  border-radius: 50%;
+  padding: 1em;
+}
+
+/* line 18, ../../src/sass/_radio-buttons.scss */
+input[type=radio]:checked + label {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmZmZmMDAiLz48c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2ZmZmYwMCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjMDBmZmZmIi8+PHN0b3Agb2Zmc2V0PSI1MCUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwZmYwMCIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjMDBmZjAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNTAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(top left, circle, #ffff00 0%, rgba(255, 255, 0, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #00ffff 0%, rgba(0, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom left, circle, #00ff00 0%, rgba(0, 255, 0, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top right, circle, #ffffff 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(top left, circle, #ffff00 0%, rgba(255, 255, 0, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #00ffff 0%, rgba(0, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom left, circle, #00ff00 0%, rgba(0, 255, 0, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top right, circle, #ffffff 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at top left, #ffff00 0%, rgba(255, 255, 0, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #00ffff 0%, rgba(0, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom left, #00ff00 0%, rgba(0, 255, 0, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top right, #ffffff 0%, rgba(255, 255, 255, 0.35) 50%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+}
+
+/* line 53, ../../src/sass/_color-box.scss */
+.color-box-container {
+  position: relative;
+  perspective: 150vmin;
+  height: 30vmin;
+  width: 30vmin;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15vmin;
+  margin-bottom: 15vmin;
+  transition: all 1s;
+}
+/* line 61, ../../src/sass/_color-box.scss */
+.color-box-container .color-box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  zoom: 0.995;
+  transition: all 1s linear;
+  transform-style: preserve-3d;
+}
+/* line 71, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > * {
+  position: absolute;
+  /*top:0;left:0;*/
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: block;
+  background-color: white;
+  color: transparent;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+}
+/* line 84, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > *:nth-child(1) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZmZmMDAiLz48c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2ZmZmYwMCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjMDBmZmZmIi8+PHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiMwMGZmZmYiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwZmYwMCIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjMDBmZjAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(top left, circle, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom left, circle, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top right, circle, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(top left, circle, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom left, circle, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top right, circle, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at top left, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom left, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top right, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  display: block;
+}
+/* line 94, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > *:nth-child(2) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwMDBmZiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjMDAwMGZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjZmYwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZmYwMGZmIi8+PHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiNmZjAwZmYiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiMwMDAwMDAiLz48c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(top right, circle, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom left, circle, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top left, circle, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(top right, circle, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom left, circle, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top left, circle, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at top right, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom left, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top left, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  -moz-transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(180deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  display: block;
+}
+/* line 104, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > *:nth-child(3) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwZmZmZiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjMDBmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjMDAwMGZmIi8+PHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiMwMDAwZmYiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iI2ZmMDBmZiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjZmYwMGZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiLz48c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(bottom left, circle, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top right, circle, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top left, circle, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(bottom left, circle, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top right, circle, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top left, circle, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at bottom left, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top right, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top left, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  -moz-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  display: block;
+}
+/* line 114, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > *:nth-child(4) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZjAwMDAiLz48c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iI2ZmZmYwMCIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjZmZmZjAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjMDBmZjAwIi8+PHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiMwMGZmMDAiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(top left, circle, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top right, circle, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom left, circle, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(top left, circle, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top right, circle, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom left, circle, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at top left, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top right, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom left, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  -moz-transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(-90deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  display: block;
+}
+/* line 124, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > *:nth-child(5) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiNmZjAwMDAiLz48c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iI2ZmMDAwMCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iI2ZmZmYwMCIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjZmZmZjAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iI2ZmMDBmZiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjZmYwMGZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIi8+PHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA=');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(top left, circle, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom left, circle, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top right, circle, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(top left, circle, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom left, circle, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top right, circle, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at top left, #ff0000 5%, rgba(255, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom left, #ffff00 5%, rgba(255, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top right, #ff00ff 5%, rgba(255, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #ffffff 5%, rgba(255, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  -moz-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  display: block;
+}
+/* line 134, ../../src/sass/_color-box.scss */
+.color-box-container .color-box > *:nth-child(6) {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwZmZmZiIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjMDBmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjEwMCUiIGN5PSIxMDAlIiByPSIxMDAlIj48c3RvcCBvZmZzZXQ9IjUlIiBzdG9wLWNvbG9yPSIjMDAwMGZmIi8+PHN0b3Agb2Zmc2V0PSI0NSUiIHN0b3AtY29sb3I9IiMwMDAwZmYiIHN0b3Atb3BhY2l0eT0iMC4zNSIvPjxzdG9wIG9mZnNldD0iNzUlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48L3JhZGlhbEdyYWRpZW50PjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyYWQpIiAvPjwvc3ZnPiA='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMCUiIHI9IjEwMCUiPjxzdG9wIG9mZnNldD0iNSUiIHN0b3AtY29sb3I9IiMwMGZmMDAiLz48c3RvcCBvZmZzZXQ9IjQ1JSIgc3RvcC1jb2xvcj0iIzAwZmYwMCIgc3RvcC1vcGFjaXR5PSIwLjM1Ii8+PHN0b3Agb2Zmc2V0PSI3NSUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAuMCIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA=='), url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjAlIiBjeT0iMTAwJSIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSI1JSIgc3RvcC1jb2xvcj0iIzAwMDAwMCIvPjxzdG9wIG9mZnNldD0iNDUlIiBzdG9wLWNvbG9yPSIjMDAwMDAwIiBzdG9wLW9wYWNpdHk9IjAuMzUiLz48c3RvcCBvZmZzZXQ9Ijc1JSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC4wIi8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
+  background-size: 100%;
+  background-image: -moz-radial-gradient(top right, circle, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom right, circle, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(top left, circle, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -moz-radial-gradient(bottom left, circle, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: -webkit-radial-gradient(top right, circle, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom right, circle, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(top left, circle, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), -webkit-radial-gradient(bottom left, circle, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  background-image: radial-gradient(circle at top right, #00ffff 5%, rgba(0, 255, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom right, #0000ff 5%, rgba(0, 0, 255, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at top left, #00ff00 5%, rgba(0, 255, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0)), radial-gradient(circle at bottom left, #000000 5%, rgba(0, 0, 0, 0.35) 45%, rgba(255, 255, 255, 0) 75%, rgba(255, 255, 255, 0));
+  -moz-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  display: block;
+}
+
+/* line 149, ../../src/sass/_color-box.scss */
+input[id=flat]:checked ~ .color-box-container > .color-box > figure:nth-child(1) {
+  -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+}
+/* line 152, ../../src/sass/_color-box.scss */
+input[id=flat]:checked ~ .color-box-container > .color-box > figure:nth-child(2) {
+  -moz-transform: rotateX(0deg) rotateY(180deg) rotateZ(-180deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(180deg) rotateZ(-180deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(-180deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(180deg) rotateZ(-180deg) translateZ(calc(15vmin - 0px));
+}
+/* line 155, ../../src/sass/_color-box.scss */
+input[id=flat]:checked ~ .color-box-container > .color-box > figure:nth-child(3) {
+  -moz-transform: rotateX(90deg) rotateY(90deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(90deg) rotateY(90deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(90deg) rotateY(90deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(90deg) rotateY(90deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+}
+/* line 158, ../../src/sass/_color-box.scss */
+input[id=flat]:checked ~ .color-box-container > .color-box > figure:nth-child(4) {
+  -moz-transform: rotateX(90deg) rotateY(-90deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(90deg) rotateY(-90deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(90deg) rotateY(-90deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(90deg) rotateY(-90deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+}
+/* line 161, ../../src/sass/_color-box.scss */
+input[id=flat]:checked ~ .color-box-container > .color-box > figure:nth-child(5) {
+  -moz-transform: rotateX(-90deg) rotateY(-180deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-90deg) rotateY(-180deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-90deg) rotateY(-180deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-90deg) rotateY(-180deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+}
+/* line 164, ../../src/sass/_color-box.scss */
+input[id=flat]:checked ~ .color-box-container > .color-box > figure:nth-child(6) {
+  -moz-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-90deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+}
+
+/* line 169, ../../src/sass/_color-box.scss */
+input[id=edge]:checked ~ .color-box-container > .color-box > figure:nth-child(1) {
+  -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+}
+/* line 172, ../../src/sass/_color-box.scss */
+input[id=edge]:checked ~ .color-box-container > .color-box > figure:nth-child(2) {
+  -moz-transform: rotateX(0deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(0deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(0deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(0deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+}
+/* line 175, ../../src/sass/_color-box.scss */
+input[id=edge]:checked ~ .color-box-container > .color-box > figure:nth-child(3) {
+  -moz-transform: rotateX(90deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(90deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(90deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(90deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+}
+/* line 178, ../../src/sass/_color-box.scss */
+input[id=edge]:checked ~ .color-box-container > .color-box > figure:nth-child(4) {
+  -moz-transform: rotateX(90deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(90deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(90deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(90deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+}
+/* line 181, ../../src/sass/_color-box.scss */
+input[id=edge]:checked ~ .color-box-container > .color-box > figure:nth-child(5) {
+  -moz-transform: rotateX(-90deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-90deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-90deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-90deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+}
+/* line 184, ../../src/sass/_color-box.scss */
+input[id=edge]:checked ~ .color-box-container > .color-box > figure:nth-child(6) {
+  -moz-transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-90deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+}
+
+/* line 189, ../../src/sass/_color-box.scss */
+input[id=tip]:checked ~ .color-box-container > .color-box > figure:nth-child(1) {
+  -moz-transform: rotateX(35.264deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(35.264deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(35.264deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(35.264deg) rotateY(0deg) rotateZ(-45deg) translateZ(calc(15vmin - 0px));
+}
+/* line 192, ../../src/sass/_color-box.scss */
+input[id=tip]:checked ~ .color-box-container > .color-box > figure:nth-child(2) {
+  -moz-transform: rotateX(35.264deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(35.264deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(35.264deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(35.264deg) rotateY(180deg) rotateZ(-135deg) translateZ(calc(15vmin - 0px));
+}
+/* line 195, ../../src/sass/_color-box.scss */
+input[id=tip]:checked ~ .color-box-container > .color-box > figure:nth-child(3) {
+  -moz-transform: rotateX(125.264deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(125.264deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(125.264deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(125.264deg) rotateY(45deg) rotateZ(-90deg) translateZ(calc(15vmin - 0px));
+}
+/* line 198, ../../src/sass/_color-box.scss */
+input[id=tip]:checked ~ .color-box-container > .color-box > figure:nth-child(4) {
+  -moz-transform: rotateX(125.264deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(125.264deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(125.264deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(125.264deg) rotateY(-135deg) rotateZ(90deg) translateZ(calc(15vmin - 0px));
+}
+/* line 201, ../../src/sass/_color-box.scss */
+input[id=tip]:checked ~ .color-box-container > .color-box > figure:nth-child(5) {
+  -moz-transform: rotateX(-54.736deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-54.736deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-54.736deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-54.736deg) rotateY(-135deg) rotateZ(180deg) translateZ(calc(15vmin - 0px));
+}
+/* line 204, ../../src/sass/_color-box.scss */
+input[id=tip]:checked ~ .color-box-container > .color-box > figure:nth-child(6) {
+  -moz-transform: rotateX(-54.736deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -ms-transform: rotateX(-54.736deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  -webkit-transform: rotateX(-54.736deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  transform: rotateX(-54.736deg) rotateY(45deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+}
+
+/* line 209, ../../src/sass/_color-box.scss */
+input[id=crop-rounded]:checked ~ .color-box-container {
+  border-radius: 25%;
+  overflow: hidden;
+}
+
+/* line 213, ../../src/sass/_color-box.scss */
+input[id=crop-circle]:checked ~ .color-box-container {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+@-moz-keyframes spin {
+  0% {
+    -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  }
+  100% {
+    -moz-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  }
+}
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  }
+  100% {
+    -webkit-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  }
+}
+@keyframes spin {
+  0% {
+    -moz-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    -ms-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    -webkit-transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  }
+  100% {
+    -moz-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    -ms-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    -webkit-transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+    transform: rotateX(0deg) rotateY(360deg) rotateZ(0deg) translateZ(calc(15vmin - 0px));
+  }
+}
+/* line 223, ../../src/sass/_color-box.scss */
+.spinning {
+  animation: spin 4s infinite linear;
+  transform-origin: 50% 50% 15vmin;
+}
+
+/*
+#circle-thing-demo {
+	@include perspective(500vmin);
+	
+	#content-items {
+		@include perspective(500vmin);
+		@include transform(rotateX(75deg));
+		
+		& > .content-item {
+			@include transform(rotateX(-75deg));
+		}
+	}
+}
+*/
+/* line 12, ../../src/sass/styles.scss */
+body, div {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 17, ../../src/sass/styles.scss */
+#circle-thing-demo {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 25, ../../src/sass/styles.scss */
+#center-thing {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 32, ../../src/sass/styles.scss */
+#content-items {
+  width: 20vmin;
+  height: 20vmin;
+}
+/* line 35, ../../src/sass/styles.scss */
+#content-items .content-item {
+  position: relative;
+  top: 20vmin;
+  width: 20vmin;
+  height: 20vmin;
+  margin-top: -20vmin;
+  overflow: hidden;
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-animation: circle-move 17.5s linear infinite;
+  -webkit-animation: circle-move 17.5s linear infinite;
+  animation: circle-move 17.5s linear infinite;
+}
+/* line 49, ../../src/sass/styles.scss */
+#content-items .content-item > * {
+  background-size: cover;
+}
+/* line 53, ../../src/sass/styles.scss */
+#content-items .content-item .bg {
+  display: block;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(1) {
+  display: block;
+  -moz-animation-delay: -2.5s;
+  -webkit-animation-delay: -2.5s;
+  animation-delay: -2.5s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(1) .sphere {
+  background-image: url(../images/1.jpg);
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(2) {
+  display: block;
+  -moz-animation-delay: -5s;
+  -webkit-animation-delay: -5s;
+  animation-delay: -5s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(2) .sphere {
+  background-image: url(../images/2.jpg);
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(3) {
+  display: block;
+  -moz-animation-delay: -7.5s;
+  -webkit-animation-delay: -7.5s;
+  animation-delay: -7.5s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(3) .sphere {
+  background-image: url(../images/3.jpg);
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(4) {
+  display: block;
+  -moz-animation-delay: -10s;
+  -webkit-animation-delay: -10s;
+  animation-delay: -10s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(4) .sphere {
+  background-image: url(../images/4.jpg);
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(5) {
+  display: block;
+  -moz-animation-delay: -12.5s;
+  -webkit-animation-delay: -12.5s;
+  animation-delay: -12.5s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(5) .sphere {
+  background-image: url(../images/5.jpg);
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(6) {
+  display: block;
+  -moz-animation-delay: -15s;
+  -webkit-animation-delay: -15s;
+  animation-delay: -15s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(6) .sphere {
+  background-image: url(../images/6.jpg);
+}
+/* line 62, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(7) {
+  display: block;
+  -moz-animation-delay: -17.5s;
+  -webkit-animation-delay: -17.5s;
+  animation-delay: -17.5s;
+}
+/* line 66, ../../src/sass/styles.scss */
+#content-items .content-item:nth-child(7) .sphere {
+  background-image: url(../images/7.jpg);
+}
+
+/* line 73, ../../src/sass/styles.scss */
+.center {
+  text-align: center;
+}
+
+/* line 76, ../../src/sass/styles.scss */
+label {
+  display: inline-block;
+}

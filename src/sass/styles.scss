@@ -6,13 +6,15 @@ $speed-scalar:2.5;
 @import "animations";
 @import "sphere-shader";
 @import "color-box";
+@import "stage-style";
+
 
 body,div {
 	margin:0;
 	padding:0;
 }
 
-#main-content {
+#circle-thing-demo {
 	height: 100vh;
 	width: 100vw;
 	display:flex;
@@ -44,13 +46,15 @@ body,div {
 		//border: 1vmin solid teal;
 		@include animation(circle-move #{$number-nav * $speed-scalar}s linear infinite);
 		//@include background-image(radial-gradient(45px 45px, cyan 10px, dodgerblue 30px));
+    	& > * {
+    		background-size:cover;
+		}
 		
 		& .bg {
 	    	display:block;
 	    	height:100%;width:100%;
 	    	display:flex;align-items:center;justify-content:center;
 	    	z-index:1;
-	    	background-size:cover;
 		}
 	}
 	
@@ -59,7 +63,7 @@ body,div {
 	  	display:block;
 	    @include animation-delay(-#{$item * $speed-scalar}s);
 	    
-	    & .sphere .bg {
+	    & .sphere {
 	    	background-image: url(../images/#{$item}.jpg);
 	    }
 	  }

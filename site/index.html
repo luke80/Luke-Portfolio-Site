@@ -21,7 +21,7 @@
 	</script>
 </head>
 <body>
-	<div id="main-content">
+	<div id="circle-thing-demo">
 		<div id="center-thing">Hello, world!</div>
 		<div id="content-items">
 			<div class="content-item"><div class="sphere"><span class="bg">Content Item 1</span></div></div>
@@ -34,15 +34,36 @@
 			<div class="content-item"><div class="sphere"><span class="bg">Content Item 8</span></div></div>
 		</div>
 	</div>
-	<section class="color-box-container">
-		<div class="color-box tipped spinning">
-			<figure>This is a list item 1</figure>
-			<figure>This is a list item 2</figure>
-			<figure>This is a list item 3</figure>
-			<figure>This is a list item 4</figure>
-			<figure>This is a list item 5</figure>
-			<figure>This is a list item 6</figure>
-		</div>
-	</section>
+	<div id="rotation-demo">
+		Orient the cube:
+		<input type="radio" name="orientation" value="spin-flat" id="flat" checked="checked"/>
+		<label for="flat">Flat</label>
+		
+		<input type="radio" name="orientation" value="spin-edge" id="edge"/>
+		<label for="edge">Edge</label>
+		
+		<input type="radio" name="orientation" value="spin-tipped" id="tip"/>
+		<label for="tip">Tip</label>
+		<br/>
+		Cropping:
+		<input type="radio" name="cropping" value="none" id="crop-none" checked="checked" />
+		<label for="crop-none">None</label>
+		
+		<input type="radio" name="cropping" value="rounded" id="crop-rounded" />
+		<label for="crop-rounded">Rounded</label>
+		
+		<input type="radio" name="cropping" value="circle" id="crop-circle" />
+		<label for="crop-circle">Circle</label>
+		<section class="color-box-container">
+			<div class="color-box spin-flat spinning">
+				<figure>1 Front</figure>
+				<figure>2 Back</figure>
+				<figure>3 Right</figure>
+				<figure>4 Left</figure>
+				<figure>5 Top</figure>
+				<figure>6 Bottom</figure>
+			</div>
+		</section>
+	</div>
 </body>
 </html>

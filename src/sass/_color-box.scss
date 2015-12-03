@@ -76,7 +76,7 @@ $translate-z:translateZ( calc(#{$size-base / 2} - #{$face-overlap}) );
 			margin:0;
 			display:block;
 			background-color:white;
-			color:black;
+			color:transparent;
 			display: flex !important;justify-content: center;align-items: center;
 			
 			transition:all 1s;

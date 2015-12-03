@@ -5,6 +5,8 @@
 	margin: 0;
 	border-radius: 50%;
 	position: relative;
+}
+.sphere > * {
 	/*	Round button shine	*/
 	@include background-image(radial-gradient(50% 120%, circle cover, #323232, rgba(0, 0, 0, 0) 80%, rgba(0, 0, 128, 1) 100%));
 }
