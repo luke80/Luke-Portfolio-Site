@@ -1,0 +1,14 @@
+/*
+#circle-thing-demo {
+	@include perspective(500vmin);
+	
+	#content-items {
+		@include perspective(500vmin);
+		@include transform(rotateX(75deg));
+		
+		& > .content-item {
+			@include transform(rotateX(-75deg));
+		}
+	}
+}
+*/
